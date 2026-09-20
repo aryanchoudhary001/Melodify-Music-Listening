@@ -1,3 +1,6 @@
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+</style>
 *{
     margin: 0;
     padding: 0;
@@ -17,12 +20,26 @@ body{
 .right{
     width: 75vw;
 }
+.home{
+    padding: 10px;
+}
 
 .home ul li{
     display: flex;
     gap: 15px;
     width: 15px;
     list-style: none;
-    
+    padding-top: 14px;
+    font-weight: bold;
+}
 
+.heading{
+    display: flex;
+    gap: 10px;
+    width: 30px;
+    padding: 23px 14px;
+    padding-top: 14px;
+    font-weight: bold;
+    align-items: center;
+    font-size: 13px;
 }
