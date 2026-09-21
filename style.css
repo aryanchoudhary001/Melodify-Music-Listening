@@ -63,11 +63,13 @@ body{
 }
 .right{
     margin-top: 16px;
+    position: relative;
 }
 .header{
     display: flex;
     justify-content: space-between;
-    background-color: #343434;
+    background-color: #343434
+    
 }
 .header >*{
     padding: 20px;
@@ -80,6 +82,8 @@ body{
     display: flex;
     gap: 10px;
     flex-wrap: wrap;
+    overflow-y: scroll;
+    max-height: 70vh;
 }
 .card{
     width: 190px;
@@ -88,7 +92,7 @@ body{
     background-color: rgb(50, 49, 49);
     position: relative;
 }
-}
+
 .card >*{
     padding-top: 10px;
 }
@@ -111,4 +115,49 @@ body{
     right: 16px;
     opacity: 0;
     transition: all 1s ease-out;
+}
+.buttons >*{
+    margin: 0 12px;
+}
+.signupbtn{
+    background-color: #343434;
+    color: #8f8585;
+    font-weight: bold;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-size: 16px;
+}
+.signupbtn:hover{
+    font-size: 17px;
+    color: rgb(252, 252, 252);
+}
+.loginbtn{
+    background-color: white;
+    border-radius: 30px;
+    color: black;
+    font-weight: bold;
+    padding: 10px;
+    width : 79px;
+    cursor: pointer;
+    font-size: 16px;
+}
+.loginbtn:hover{
+    font-weight: bold;
+    font-size: 17px;
+    cursor: pointer;
+}
+
+
+.playbar{
+    position: absolute;
+    bottom: 0;
+    background-color: rgb(111, 9, 9);
+    width: 100%;
+    padding: 12px;
+}
+.songbuttons{
+    display:flex ;
+    gap: 10px;
+    align-items: center;
 }
