@@ -56,6 +56,7 @@ body{
     gap: 13px;
     position: absolute;
     bottom:0;
+    padding: 10px ;
 }
 .footer a{
     color: grey;
@@ -74,11 +75,19 @@ body{
 .melodifyPlaylist{
     padding:6px;
 }
-.melodifyPlaylist .card{
-    width: 200px;
+.cardContainer{
+    margin: 30px;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+.card{
+    width: 190px;
     padding: 10px;
     border-radius: 5px;
-    background-color: rgb(255, 0, 0);
+    background-color: rgb(50, 49, 49);
+    position: relative;
+}
 }
 .card >*{
     padding-top: 10px;
@@ -86,4 +95,20 @@ body{
 .card img{
     width: 100%;
     object-fit: contain;
+}
+
+.play{
+    width: 28px;
+    height: 28px;
+    background-color: #480606;
+    border-radius: 100%;
+    padding: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 155px;
+    right: 16px;
+    opacity: 0;
+    transition: all 1s ease-out;
 }
