@@ -34,7 +34,7 @@ async function main() {
                 <img class="invert" src="music.svg" alt="">
                 <div class="info">
                     <div>${cleanName}</div>
-                    <div>Unknown Artist</div>
+                    <div>Aryan Choudhary</div>
                 </div>
                 <img class="invert" src="play.svg" alt="">
             </li>`;
