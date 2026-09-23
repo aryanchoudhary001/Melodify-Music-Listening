@@ -161,11 +161,24 @@ body{
     justify-content: center;
     gap: 16px;
 }
-.songList ul {
-    padding: 0 42px;
+.songList ul li {
+    cursor: pointer; /* Makes it clickable */
+    display: flex;
+    gap: 14px;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px;
+    list-style-type: none;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    margin-bottom: 8px;
+    border-radius: 5px;
 }
 
-.songList ul li{
-    list-style-type:decimal;
-    display: flex;
+.songList ul li img {
+    width: 30px; /* Controls size of music.svg and play.svg */
+}
+
+.songList .info {
+    font-size: 14px;
+    width: 344px;
 }
