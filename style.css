@@ -104,7 +104,7 @@ body{
 .play{
     width: 28px;
     height: 28px;
-    background-color: #480606;
+    background-color: #ffffff;
     border-radius: 100%;
     padding: 4px;
     display: flex;
@@ -156,6 +156,7 @@ body{
     width:70vw;
     padding: 12px;
     border-radius:60px; 
+    height: 34px;
 }
 .songbuttons{
     display:flex ;
@@ -192,11 +193,23 @@ body{
     margin-bottom:
 }
 .seekbar{
-    height:2px;
-    width: 97%;
-    border: 2px solid rgb(0, 0, 0);
+    height: 2px;px;
+    width: 70vw;
+    border: 2px solid rgb(252, 251, 251);
     position: absolute;
     bottom: 0;
     border-radius: 10px;
-
+    margin: 6px;
+    background-color: #ffffff;
+}
+.circle{
+    width: 10px;
+    height: 10px;
+    border-radius: 20px;
+    position: relative;
+    background-color: rgb(243, 238, 238);
+    bottom: 5px;
+    left: 0%;
+    transition: left 0.5s;
+    
 }
