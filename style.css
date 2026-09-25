@@ -1,17 +1,15 @@
-<style>
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
-</style>
+
 *{
     margin: 0;
     padding: 0;
+    font-family: 'Roboto', sans-serif; /* Applied your imported font globally */
 }
 
 body{
     background-color: rgb(0, 0, 0);
-    color:white; */
+    color: white; 
 }
-
-
 
 .left{
     width: 25vw;
@@ -46,7 +44,6 @@ body{
 .library{
     min-height: 80vh;
     position: relative;
-
 }
 
 .footer{
@@ -68,8 +65,7 @@ body{
 .header{
     display: flex;
     justify-content: space-between;
-    background-color: #343434
-    
+    background-color: #343434;
 }
 .header >*{
     padding: 20px;
@@ -148,23 +144,8 @@ body{
     cursor: pointer;
 }
 
-
-.playbar{
-    position: fixed;
-    bottom: 30px;
-    background-color: rgb(73, 10, 189);
-    width:70vw;
-    padding: 12px;
-    border-radius:60px; 
-    height: 34px;
-}
-.songbuttons{
-    display:flex ;
-    justify-content: center;
-    gap: 16px;
-}
 .songList ul li {
-    cursor: pointer; /* Makes it clickable */
+    cursor: pointer; 
     display: flex;
     gap: 2px;
     justify-content: space-between;
@@ -180,7 +161,7 @@ body{
 }
 
 .songList ul li img {
-    width: 30px; /* Controls size of music.svg and play.svg */
+    width: 30px; 
 }
 
 .songList .info {
@@ -190,26 +171,107 @@ body{
 .songList{
     overflow: auto;
     height: 444px;
-    margin-bottom:
 }
-.seekbar{
-    height: 2px;px;
+
+/* ==========================================================================
+   🎧 MODIFIED PLAYBAR & CONTROLS SECTION (Matches your HTML Structure)
+   ========================================================================== */
+
+.playbar {
+    position: fixed;
+    bottom: 30px;
+    background-color: #121212; /* Switched to a professional dark profile */
     width: 70vw;
-    border: 2px solid rgb(252, 251, 251);
-    position: absolute;
-    bottom: 0;
-    border-radius: 10px;
-    margin: 6px;
-    background-color: #ffffff;
-}
-.circle{
-    width: 10px;
-    height: 10px;
-    border-radius: 20px;
-    position: relative;
-    background-color: rgb(243, 238, 238);
-    bottom: 5px;
-    left: 0%;
-    transition: left 0.5s;
+    padding: 20px 24px;
+    border-radius: 12px; /* Clean rectangular panel with rounded corners */
+    box-sizing: border-box;
+    border: 1px solid #282828;
     
+    /* Flex alignment rules for: seekbar -> songinfo -> songbuttons -> songtime */
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+/* 🎚️ 1. Seekbar Positioning */
+.seekbar {
+    width: 35%; /* Fixed distribution size */
+    height: 5px;
+    background-color: #4d4d4d;
+    cursor: pointer;
+    position: relative;
+    border-radius: 10px;
+    transition: background-color 0.2s ease;
+}
+
+.seekbar:hover {
+    background-color: #1db954; /* Highlights green on hover */
+}
+
+/* Moving Dial Thumb pin */
+.circle {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: rgb(255, 255, 255);
+    position: absolute;
+    top: 50%;
+    left: 0%;
+    transform: translate(-50%, -50%); /* Center over line track perfectly */
+    transition: left 0.1s linear;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
+}
+
+/* 🏷️ 2. Song Text Layout Profile */
+.songinfo {
+    color: #ffffff;
+    font-size: 0.85rem;
+    font-weight: 500;
+    width: 25%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis; /* Appends dots (...) if a track name overflows its width */
+}
+
+/* 🎮 3. Control Action Layout Buttons Container */
+.songbuttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    width: 25%;
+}
+
+.songbuttons img {
+    cursor: pointer;
+    opacity: 0.8;
+    height: 24px;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.songbuttons img:hover {
+    transform: scale(1.1);
+    opacity: 1;
+}
+
+/* Specific center play/pause button customization accent */
+#play {
+    height: 34px;
+    width: 34px;
+    background-color: #000000;
+    border-radius: 50%;
+    padding: 8px;
+    box-sizing: border-box;
+    filter: invert(1); /* Inverts dark play icon to clean black on the white circle background */
+}
+
+/* ⏱️ 4. Runtime Timestamp Data Display Alignment */
+.songtime {
+    color: #b3b3b3;
+    font-size: 0.85rem;
+    font-family: monospace; /* Avoids text layout shifts when numbers change */
+    width: 15%;
+    text-align: right;
 }
