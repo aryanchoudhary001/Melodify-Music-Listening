@@ -75,8 +75,8 @@ async function main() {
             */
             if (!currentSong.src || currentSong.src === window.location.href) {
                 /* 
-                  🛠️ FIX 3: Automatically load and play the first song in your array 
-                  if the user clicks the playbar button before selecting a specific item.
+                🛠️ FIX 3: Automatically load and play the first song in your array 
+                if the user clicks the playbar button before selecting a specific item.
                 */
                 if (globalSongsList.length > 0) {
                     playMusic(globalSongsList[0]);
