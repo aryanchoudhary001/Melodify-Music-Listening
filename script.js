@@ -2,6 +2,20 @@ let currentSong = new Audio();
 // Global variable to store the loaded playlist so it can be accessed inside click listeners
 let globalSongsList = []; 
 
+function formatTime(seconds) {
+    let minutes = Math.floor(seconds / 60);
+    let remainingSeconds = Math.floor(seconds % 60);
+
+    minutes = String(minutes).padStart(2, "0");
+    remainingSeconds = String(remainingSeconds).padStart(2, "0");
+
+    return `${minutes}:${remainingSeconds}`;
+}
+
+console.log(formatTime(12));   // 00:12
+console.log(formatTime(72));   // 01:12
+console.log(formatTime(125));  // 02:05
+
 async function getSongs() {
     let a = await fetch("songs/");
     let response = await a.text();
@@ -92,6 +106,11 @@ async function main() {
             play.src = "play.svg";
         }
     });
+    // Listen for timeupdate event
+    currentSong.addEventListener("timeupdate",()=>{
+        console.log(currentSong.currentTime,currentSong.duration);
+        document.querySelector(".songtime").innerHTML = `${formatTime(currentSong.currentTime)}/${formatTime(currentSong.duration)}`
+    })
 }
 
 main();
